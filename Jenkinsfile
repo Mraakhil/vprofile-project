@@ -17,17 +17,46 @@ pipeline {
         NEXUS_LOGIN = 'nexuslogin'
     }
 
+    
+
     stages {
-        stage('Build'){
+        stage('Build') {
             steps {
                 sh '''
-                  # Replace env variables inside settings.xml
                   envsubst < settings.xml > settings_resolved.xml
-
-                  # Run Maven with the resolved file
                   mvn -s settings_resolved.xml -DskipTests install
                 '''
+            }
+            post {
+                success {
+                    echo 'Now Archiving...'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
+            }
+        }
+
+        stage('UNIT TEST') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('INTEGRATION TEST') {
+            steps {
+                sh 'mvn verify -DskipUnitTests'
+            }
+        }
+
+        stage('CODE ANALYSIS WITH CHECKSTYLE') {
+            steps {
+                sh 'mvn checkstyle:checkstyle'
+            }
+            post {
+                success {
+                    echo 'Generated Analysis Result'
+                }
             }
         }
     }
 }
+
