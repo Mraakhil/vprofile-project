@@ -37,19 +37,19 @@ pipeline {
 
         stage('UNIT TEST') {
             steps {
-                sh 'mvn test'
+                sh 'mvn -s settings_resolved.xml test'
             }
         }
 
         stage('INTEGRATION TEST') {
             steps {
-                sh 'mvn verify -DskipUnitTests'
+                sh 'mvn -s settings_resolved.xml verify -DskipUnitTests'
             }
         }
 
         stage('CODE ANALYSIS WITH CHECKSTYLE') {
             steps {
-                sh 'mvn checkstyle:checkstyle'
+                sh 'mvn -s settings_resolved.xml checkstyle:checkstyle'
             }
             post {
                 success {
