@@ -27,12 +27,13 @@
   </servers>
 
   <mirrors>
-    <mirror>
-      <id>${CENTRAL_REPO}</id>
-      <name>${CENTRAL_REPO}</name>
-      <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS_GRP_REPO}/</url>
-      <mirrorOf>*</mirrorOf>
-    </mirror>
-  </mirrors>
+  <mirror>
+    <id>nexus</id>
+    <name>Nexus Mirror</name>
+    <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS_GRP_REPO}/</url>
+    <mirrorOf>central</mirrorOf>
+  </mirror>
+</mirrors>
+
 
 </settings>
