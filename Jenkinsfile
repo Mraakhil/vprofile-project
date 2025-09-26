@@ -15,7 +15,7 @@ pipeline {
         NEXUSPORT = '8081'
         NEXUS_GRP_REPO = 'vpro-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
-        SONARSERVER = 'sonarserver' // Jenkins SonarQube server name
+        SONARSCANNER = 'sonarserver' // Jenkins SonarQube server name
     }
 
     stages {
