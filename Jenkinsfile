@@ -4,8 +4,7 @@ pipeline {
         maven "MAVEN3.9"
         jdk "JDK17"
         SONARSCANNER = 'sonarscanner'
-        
-    }
+        }
     
     environment {
         SNAP_REPO = 'vprofile-snapshot'
@@ -18,7 +17,6 @@ pipeline {
         NEXUS_GRP_REPO = 'vpro-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
         SONARSERVER = 'sonarserver'
-        SONARSCANNER = 'sonarscanner'
     }
 
     stages {
