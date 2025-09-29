@@ -3,7 +3,6 @@ pipeline {
     tools {
         maven "MAVEN3.9"
         jdk "JDK17"
-        hudson.plugins.sonar.SonarRunnerInstallation("SONARSCANNER")
         }
     
     environment {
@@ -17,6 +16,7 @@ pipeline {
         NEXUS_GRP_REPO = 'vpro-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
         SONARSERVER = 'sonarserver'
+        SONARSCANNER = 'SONARSCANNER'
     }
 
     stages {
