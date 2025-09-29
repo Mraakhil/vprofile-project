@@ -3,7 +3,7 @@ pipeline {
     tools {
         maven "MAVEN3.9"
         jdk "JDK17"
-        SONARSCANNER 'sonarscanner'
+        SONARSCANNER "sonarscanner"
         }
     
     environment {
