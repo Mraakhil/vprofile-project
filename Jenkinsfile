@@ -97,9 +97,9 @@ pipeline {
           repository: "${RELEASE_REPO}",
           credentialsId: "${nuxuslogin}",
           artifacts: [
-              [artifactId: projectName,
+              [artifactId: 'vproapp',
                classifier: '',
-               file: 'my-service-' + version + '.jar',
+               file: 'target/vprofile-v2.war',
                type: 'war']
             ]
           )
