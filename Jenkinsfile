@@ -86,36 +86,25 @@ pipeline {
                 }
             }
         }
-        stage("Publish to Nexus Repository Manager") {
-            steps {
-                script {
-                    pom = readMavenPom file: "pom.xml"
-                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}")
-                    echo "${filesByGlob[0].name} ${filesByGlob[0].path}"
-
-                    artifactPath = filesByGlob[0].path
-                    artifactExists = fileExists artifactPath
-
-                    if (artifactExists) {
-                        echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}"
-                        nexusArtifactUploader(
-                            nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
-                            nexusUrl: NEXUS_URL,
-                            groupId: pom.groupId,
-                            version: ARTVERSION,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
-                            artifacts: [
-                                [artifactId: pom.artifactId, classifier: '', file: artifactPath, type: pom.packaging],
-                                [artifactId: pom.artifactId, classifier: '', file: "pom.xml", type: "pom"]
-                            ]
-                        )
-                    } else {
-                        error "*** File: ${artifactPath}, could not be found"
-                    }
-                }
-            }
-        }
+        stage ("upload "){
+            steps{
+          nexusArtifactUploader(
+          nexusVersion: 'nexus3',
+          protocol: 'http',
+          nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
+          groupId: 'QA',
+          version: "${env.BUID_ID}-${env.BUILD_TIMESTAP}",
+          repository: "${RELEASE_REPO}",
+          credentialsId: "${NEXUS_LOGIN}",
+          artifacts: [
+              [artifactId: projectName,
+               classifier: '',
+               file: 'my-service-' + version + '.jar',
+               type: 'war']
+            ]
+          )
+       }
     }
 }
+}
+    
