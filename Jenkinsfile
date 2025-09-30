@@ -95,7 +95,7 @@ pipeline {
           groupId: 'QA',
           version: "${env.BUID_ID}-${env.BUILD_TIMESTAP}",
           repository: "${RELEASE_REPO}",
-          credentialsId: ${NEXUS_LOGIN},
+          credentialsId: "${NEXUS_USER}",
           artifacts: [
               [artifactId: projectName,
                classifier: '',
