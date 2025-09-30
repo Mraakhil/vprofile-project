@@ -1,0 +1,1 @@
+The Jenkins pipeline should be available while pushing it into Nexus. The plugin's name is Nexus Artifact Uploader in the credentials. Name will be matched with the pipeline credential
