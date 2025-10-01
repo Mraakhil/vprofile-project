@@ -12,8 +12,6 @@ pipeline {
         NEXUSIP = '65.2.145.14'
         NEXUSPORT = '8081'
         NEXUS_GRP_REPO = 'vpro-maven-group'
-        NEXUS_USER = 'admin'
-        NEXUS_PASS = 'Aakhil123@'
 
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'SONARSCANNER'
@@ -23,7 +21,7 @@ pipeline {
         NEXUS_PROTOCOL = 'http'
         NEXUS_URL = '65.2.145.14:8081'
         NEXUS_REPOSITORY = 'vprofile-release'
-        NEXUS_CREDENTIAL_ID = 'nexuslogin'
+        NEXUS_CREDENTIAL_ID = 'admin'
         ARTVERSION = '1.0.0'
     }
 
