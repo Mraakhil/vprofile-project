@@ -86,25 +86,26 @@ pipeline {
                 }
             }
         }
-        stage ("upload "){
-            steps{
-          nexusArtifactUploader(
-          nexusVersion: 'nexus3',
-          protocol: 'http',
-          nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
-          groupId: 'QA',
-          version: "${env.BUID_ID}-${env.BUILD_TIMESTAP}",
-          repository: "${RELEASE_REPO}",
-          credentialsId: "${nuxuslogin}",
-          artifacts: [
-              [artifactId: 'vproapp',
-               classifier: '',
-               file: 'target/vprofile-v2.war',
-               type: 'war']
+       stage("Upload") {
+    steps {
+        nexusArtifactUploader(
+            nexusVersion: 'nexus3',
+            protocol: 'http',
+            nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
+            groupId: 'QA',
+            version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
+            repository: "${RELEASE_REPO}",
+            credentialsId: "${NEXUS_CREDENTIAL_ID}",
+            artifacts: [
+                [artifactId: 'vproapp',
+                 classifier: '',
+                 file: 'target/vprofile-v2.war',
+                 type: 'war']
             ]
-          )
-       }
+        )
     }
+}
+
 }
 }
     
