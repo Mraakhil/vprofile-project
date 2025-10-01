@@ -21,7 +21,7 @@ pipeline {
         NEXUS_PROTOCOL = 'http'
         NEXUS_URL = '65.2.145.14:8081'
         NEXUS_REPOSITORY = 'vprofile-release'
-        NEXUS_CREDENTIAL_ID = 'admin'
+        NEXUS_CREDENTIAL_ID = 'nexuslogin'
         ARTVERSION = '1.0.0'
     }
 
