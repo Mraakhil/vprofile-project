@@ -1,1 +1,41 @@
 The Jenkins pipeline should be available while pushing it into Nexus. The plugin's name is Nexus Artifact Uploader in the credentials. Name will be matched with the pipeline credential
+
+create ecs repository 
+create new user
+attach permission ec2 full, ecs full
+
+
+
+
+#pipline before getting into cd
+Commons Compress API	 Success
+Pipeline Utility Steps	 Success
+Loading plugin extensions	 Success
+Authentication Tokens API	 Success
+Docker Commons	 Success
+Docker Pipeline	 Success
+Loading plugin extensions	 Success
+SSH server	 Success
+CloudBees Docker Build and Publish	 Success
+Amazon Web Services SDK 2 :: Core	 Success
+Amazon Web Services SDK 2 :: ECR	 Success
+Amazon Web Services SDK 2 :: EC2	 Success
+Amazon Web Services SDK :: Minimal	 Success
+Amazon Web Services SDK :: EC2	 Success
+AWS Credentials	 Success
+Amazon ECR	 Success
+Loading plugin extensions	 Success
+Amazon Web Services SDK :: SQS	 Success
+Amazon Web Services SDK :: SNS	 Success
+Amazon Web Services SDK :: Api Gateway	 Success
+Amazon Web Services SDK :: CloudFormation	 Success
+Amazon Web Services SDK :: Elastic Beanstalk	 Success
+Amazon Web Services SDK :: Elastic Load Balancing V2	 Success
+Amazon Web Services SDK :: IAM	 Success
+Amazon Web Services SDK :: ECR	 Pending
+Amazon Web Services SDK :: CloudFront	 Pending
+Amazon Web Services SDK :: Lambda	 Pending
+Amazon Web Services SDK :: Organizations	 Pending
+Amazon Web Services SDK :: CodeDeploy	 Pending
+Pipeline: AWS Steps	 Pending
+Loading plugin extensions
