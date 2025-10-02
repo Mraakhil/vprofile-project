@@ -23,6 +23,9 @@ pipeline {
         NEXUS_REPOSITORY = 'vprofile-release'
         NEXUS_CREDENTIAL_ID = 'nuxuslogin'
         ARTVERSION = '1.0.0'
+        registryCredential = 'ecr:ap-south-1:awscreds'
+        appRegistry = '332848642864.dkr.ecr.ap-south-1.amazonaws.com/vprofileappimg'
+        vprofileRegistry = 'https://332848642864.dkr.ecr.ap-south-1.amazonaws.com'
     }
 
     stages {
